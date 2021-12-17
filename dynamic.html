@@ -1,0 +1,10 @@
+{% extends "project/menu.html" %}
+{% load static %}
+{% block title %}
+{{ id.title }}
+{% endblock %}
+{% block doc %}
+    <img src="{{ id.img.url }}" alt="id.title"><br>
+    {{ id.title }}
+    {{ id.text }}
+{% endblock %}

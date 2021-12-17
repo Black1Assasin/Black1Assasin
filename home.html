@@ -1,0 +1,64 @@
+{% extends "project/menu.html" %}
+{% load static %}
+{% load project_tags %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block href %}
+{% static "project/css/home.css" %}
+{% endblock %}
+{% block doc %}
+
+<div class="container-lg"><div style="text-align: center;margin-bottom: 3em"><h1 id="Easy">Easy&amp;Useful</h1>
+    <h3 id="grayh3" style="color: #c2ccd0">Project Management Tool</h3>
+    <p id="centep">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud </p>
+
+</div>
+<div class="row">
+    <div class="col-lg-4"><img src="{% static "project/img/calendar.jpg"%}" class="imgcenter" alt="calendar">
+    <h3 class="center">Title goes here</h3>
+        <p class="paliqua">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="col-lg-4"><img src="{% static "project/img/даун.jpg"%}" class="imgcenter" alt="даун">
+    <h3 class="center" style="margin-bottom: 19px;margin-top: 8px;">Title goes here</h3>
+        <p class="paliqua">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="col-lg-4"><img src="{% static "project/img/cool-mane.jpg"%}" class="imgcenter" alt="cool-mane">
+        <h3 class="center">Title goes here</h3>
+        <p class="paliqua">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <a href="/" class="button">GET STARTED</a>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row colect">
+    <div class="col-lg" style="background: #80d8fe;"><img src="{% static "project/img/one-s.jpg" %}" alt="four" class="img_icon">
+<pre class="post">1200+
+Business</pre>    </div>
+    <div class="col-lg" style="background: #82b1ff;"><img src="{% static "project/img/two-s.jpg" %}" alt="three" class="img_icon">
+<pre class="post">6000+
+Downloads</pre>     </div>
+    <div class="col-lg" style="background: #b388fe;"><img src="{% static "project/img/three-s.jpg" %}" alt="two" class="img_icon">
+<pre class="post">3000+
+Free Installs</pre>     </div>
+    <div class="col-lg" style="background: #ea80fc;"><img src="{% static "project/img/five-s.jpg" %}" alt="one" class="img_icon">
+    <pre class="post">4000+
+Pro Users</pre> </div></div>
+</div>
+
+{% for i in text %}
+    {% if i.img %}
+    <a href="{{ i.get_absolute_url }}"><img src="{{ i.img.url }}" alt="изображения"></a>
+      {{ e.name }}{{ i.text }}<a href="{{ i.get_absolute_url2 }}">{{ update }}</a>/
+     {% else %}
+        {{ i.cat.name}} <hr>  <a href=" {{ i.get_absolute_url }}">{{ i.text }}</a>
+    {% endif %}
+
+{% endfor %}
+
+{% endblock %}
